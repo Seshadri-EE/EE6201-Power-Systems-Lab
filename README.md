@@ -30,16 +30,16 @@ These notebooks are designed for **quick review and guided practice** of Python 
 3. Run code cells to see examples and experiment with modifications.  
 
 ## Repository Structure
-EE6201-PowerSystemsLab-Python/
-│
-├── README.md                 # Overview and instructions
-├── notebooks/                # Lecture notebooks
-│   ├── Lecture_1_Basics.ipynb
-│   ├── Lecture_2_Intermediate.ipynb
-│   └── ...                   # Other lecture notebooks
-├── data/                     # Optional: sample datasets for exercises
-├── images/                   # Optional: diagrams or illustrations
-└── resources/                # Optional: PDFs, slides, references
+
+- `EE6201-PowerSystemsLab/`
+  - `README.md` → Overview and instructions
+  - `notebooks/` → Lecture notebooks
+    - `Lecture_1_Basics.ipynb`
+    - `Lecture_2_Intermediate.ipynb`
+    - … other lecture notebooks
+  - `data/` → Optional sample datasets for exercises
+  - `images/` → Optional diagrams or illustrations
+  - `resources/` → Optional PDFs, slides, references
 
 ## References
 - [Python Documentation](https://docs.python.org/3/)  
