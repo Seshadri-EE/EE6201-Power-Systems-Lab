@@ -1,0 +1,159 @@
+# =============================================================================
+# Data.d1
+# =============================================================================
+#
+# Network Data File — South Indian Power System (Equivalent Network)
+#
+# Acknowledgement:
+#   This data was originally received during my (V. Seshadri Sravan Kumar)
+#   student days at the Indian Institute of Science (IISc), Bangalore,
+#   from Prof. D. Thukaram, Department of Electrical Engineering, IISc.
+#   Full credit and gratitude to Prof. D. Thukaram for sharing this data.
+#
+# Usage:
+#   This data file is provided solely for educational purposes as part of
+#   EE6201 — Power Systems Lab, IIT Hyderabad.
+#
+# Format:
+#   Each record begins with a two-character code identifying the element:
+#       BS  — Bus
+#       TR  — Transformer
+#       TL  — Transmission Line
+#       DZ  — Shunt Reactor
+#       DP  — Load
+#       GP  — Generator
+#       XX  — Ignored / non-active record (skipped by the parser)
+#       #   — Comment line (skipped by the parser)
+#
+# System Base: 100 MVA
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# BUS DATA
+# Format: BS  <zone>  <description>  <node>  <voltage_kV>
+# -----------------------------------------------------------------------------
+
+BS   1  RAMG-GEN   1    15.0
+BS   2  RCR--GEN   1    15.0
+BS   3  NGSG-GEN   1    15.0
+BS   4  NYVL-GEN   1    15.0
+BS   5  HYDBD220   1   220.0
+BS   6  SALEM220   1   220.0
+BS   7  SRPBT220   1   220.0
+BS   8  HOODY220   1   220.0
+BS   9  CUDDP220   1   220.0
+BS  10  GOOTY220   1   220.0
+BS  11  GDHLY400   1   400.0
+BS  12  DVGR-400   1   400.0
+BS  13  SOMNH220   1   220.0
+BS  14  HOODY400   1   400.0
+BS  15  RMGDM400   1   400.0
+BS  16  HYDBD400   1   400.0
+BS  17  RCR--400   1   400.0
+BS  18  GOOTY400   1   400.0
+BS  19  SALEM400   1   400.0
+BS  20  SRPBT400   1   400.0
+BS  21  NYVL-400   1   400.0
+BS  22  SOMNH400   1   400.0
+BS  23  CUDDP400   1   400.0
+BS  24  NGSGR400   1   400.0
+BS  25  FAULTBUS   1   400.0
+
+# -----------------------------------------------------------------------------
+# TRANSFORMER DATA
+# Format: TR  <zone>  <description>  <from>  <to>  <r>  <x>  <tap>  <max_MVA>
+# All impedances in per unit on system base (100 MVA)
+# -----------------------------------------------------------------------------
+
+TR   1  2*315MVA  16   5 0.00099 0.01984    1.00  630.00
+TR   1  2*500MVA  22  13 0.00063 0.01250    1.00 1000.00
+TR   1  1*315MVA  18  10 0.00198 0.03968    1.00  315.00
+TR   1  2*315MVA  19   6 0.00099 0.01984    1.00  630.00
+TR   1  1*315MVA  23   9 0.00198 0.03968    1.00  315.00
+TR   1  2*315MVA  20   7 0.00099 0.01984    1.00  630.00
+TR   1  1*500MVA  14   8 0.00125 0.02500    1.00  500.00
+TR   1  EQT.2200  15   1 0.00033 0.00670    1.00 2200.00
+TR   1  1*315MVA  17   2 0.00198 0.03960    1.00  315.00
+TR   1  2*315MVA  24   3 0.00099 0.01984    1.00  630.00
+TR   1  2*315MVA  21   4 0.00099 0.01984    1.00  630.00
+
+# -----------------------------------------------------------------------------
+# TRANSMISSION LINE DATA
+# Format: TL  <zone>  <description>  <from>  <to>  <r>  <x>  <b/2>  <max_MVA>
+# Zone 2 entries represent double-circuit lines
+# -----------------------------------------------------------------------------
+
+TL   1  S*220KMS  22  25 0.00215 0.02385  0.3185  500.00
+TL   1  S*220KMS  25  23 0.00215 0.02385  0.3185  500.00
+TL   1  S*290KMS  22  18 0.00589 0.05995  0.7841  500.00
+TL   1  S*120KMS  11  12 0.00198 0.02471  0.3230  500.00
+TL   1  S147+4KM  11  17 0.00280 0.02998  0.4270  500.00
+TL   1  S260+170  12  14 0.00546 0.06794  0.8884  500.00
+TL   1  S253+4KM  17  24 0.00477 0.05103  0.7267  500.00
+TL   1  S*295KMS  24  18 0.00569 0.06008  0.7941  500.00
+TL   2  2*S282KM  24  23 0.00272 0.02872  1.5183 1000.00
+TL   1  S*235KMS  23  20 0.00388 0.04834  0.6547  500.00
+TL   1  S*193KMS  15  16 0.00372 0.03931  0.5314  500.00
+TL   1  S*127KMS  24  16 0.00245 0.02587  0.3497  500.00
+TL   2  D*270KMS  15  24 0.00261 0.02780  1.4850 1000.00
+TL   2  D*175KMS  21  19 0.00145 0.01802  0.9397 1000.00
+TL   1  S*176KMS  22  19 0.00289 0.03603  0.4622  500.00
+TL   1  S*180KMS  21  20 0.00297 0.03706  0.4754  500.00
+TL   1  S*38-KMS  13   8 0.00315 0.01569  0.0527  500.00
+
+# -----------------------------------------------------------------------------
+# SHUNT REACTOR DATA
+# Format: DZ  <zone>  <description>  <node>  <r>  <x>
+# -----------------------------------------------------------------------------
+
+DZ   0  SOM--400  22   .0000 2.20500
+DZ   0  S0M--400  22   .0000 1.75000
+DZ   0  GDHLY400  11   .0000 1.75000
+DZ   0  DVGRE400  12   .0000 2.20500
+DZ   0  HOODY400  14   .0000 2.20500
+DZ   0  RACHR400  17   .0000 2.20500
+DZ   0  RMGDM400  15   .0000 2.20500
+DZ   0  RMGDM400  15   .0000 2.20500
+DZ   0  NGRSR400  24   .0000 1.10250
+DZ   0  NGRSR400  24   .0000  .51760
+DZ   0  CUDPH400  23   .0000 2.20500
+DZ   0  CUDPH400  23   .0000 2.20500
+DZ   0  HYDBD400  16   .0000 2.20500
+DZ   0  GOOTY400  18   .0000  .97560
+DZ   0  SPBDR400  20   .0000 1.10250
+DZ   0  SALEM400  19   .0000 1.10250
+DZ   0  SALEM400  19   .0000 2.20500
+DZ   0  SPBDR400  20   .0000 2.20500
+DZ   0  SALEM400  19   .0000 2.20500
+
+# -----------------------------------------------------------------------------
+# LOAD DATA
+# Format: DP  <zone>  <description>  <node>  <P_MW>  <Q_MVAR>  <comp_MVAR>
+# Note: Some records contain additional fields — these are ignored by the
+#       parser. XX records are non-active and skipped entirely.
+# -----------------------------------------------------------------------------
+
+XX   1  HYD-220    5   430.0  170.00    0.00    25.0    0.0     5.0
+DP   1  HYD-220    5   430.0  170.00    0.00
+DP   1  SLM-220    6   280.0  190.00    0.00
+DP   1  SPR-220    7   320.0  110.00    0.00
+DP   1  HODY220    8   180.0   70.00    0.00
+DP   1  CDP-220    9   120.0   40.00    0.00
+DP   1  GTY-220   10    60.0   20.00    0.00
+DP   1  SOM-220   13   450.0  180.00    0.00
+DP   1  RMG-400   15   780.0  300.00    0.00
+XX   1  SVC-BUS   25     0.0    0.00  175.00
+
+# -----------------------------------------------------------------------------
+# GENERATOR DATA
+# Format: GP  <zone>  <description>  <node>  <P_MW>  <Q_max>  <Q_min>  <V_pu>
+# -----------------------------------------------------------------------------
+
+GP  11  RMG        1  1820.0   950.0  -150.0     1.0
+GP  11  RCR        2   160.0   320.0   -50.0     1.0
+GP  11  NGS        3   350.0   400.0  -100.0     1.0
+GP  11  NYV        4   520.0   400.0   -90.0     1.0
+
+# =============================================================================
+# END OF Data.d1
+# =============================================================================
